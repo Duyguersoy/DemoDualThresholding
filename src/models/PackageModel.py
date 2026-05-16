@@ -20,7 +20,7 @@ class InputImage(Input):
         title = "Image"
 
 class InputImageSecond(Input):
-    name: Literal["InputImageSecond"] = "InputImageSecond"
+    name: Literal["inputImageSecond"] = "inputImageSecond"
     value: Union[List[Image], Image]
     type: str = "object"
 
@@ -36,7 +36,7 @@ class InputImageSecond(Input):
         title = "Second Image"
 
 class OutputImageSecond(Output):
-    name: Literal["OutputImageSecond"] = "OutputImageSecond"
+    name: Literal["outputImageSecond"] = "outputImageSecond"
     value: Union[List[Image], Image]
     type: str = "object"
 
@@ -369,7 +369,7 @@ class ThresholdingExecutor(Config):
 
 
 class DualThresholdingInputs(Inputs):
-    InputImage: InputImage
+    inputImage: InputImage
     inputImageSecond: InputImageSecond
 
 
@@ -378,7 +378,7 @@ class DualThresholdingConfigs(Configs):
 
 
 class DualThresholdingOutputs(Outputs):
-    OutputImage: OutputImage
+    outputImage: OutputImage
     outputImageSecond: OutputImageSecond
 
 class DualThresholdingRequest(Request):
