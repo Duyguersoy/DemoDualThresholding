@@ -336,25 +336,25 @@ class ThresholdingExecutor(Config):
             }
         }
 
-class DualThresholdingExecutor(Config):
-    name: Literal["DualThresholdingExecutor"] = "DualThresholdingExecutor"
-    value: Union[ThresholdingRequest, ThresholdingResponse]
-    type: Literal["executor"] = "object"
-    field: Literal["option"] = "option"
+# class DualThresholdingExecutor(Config):
+#     name: Literal["DualThresholdingExecutor"] = "DualThresholdingExecutor"
+#     value: Union[ThresholdingRequest, ThresholdingResponse]
+#     type: Literal["executor"] = "object"
+#     field: Literal["option"] = "option"
 
-    class Config:
-        title = "Dual Thresholding"
-        json_schema_extra = {
-            "target": {
-                "value": 0
-            }
-        }
+#     class Config:
+#         title = "Dual Thresholding"
+#         json_schema_extra = {
+#             "target": {
+#                 "value": 0
+#             }
+#         }
 
 
 
 class ConfigExecutor(Config):
     name: Literal["ConfigExecutor"] = "ConfigExecutor"
-    value: Union[ThresholdingExecutor, DualThresholdingExecutor]
+    value: Union[ThresholdingExecutor]
     type: Literal["executor"] = "executor"
     field: Literal["dependentDropdownlist"] = "dependentDropdownlist"
     class Config:
