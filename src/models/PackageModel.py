@@ -371,4 +371,4 @@ class PackageConfigs(Configs):
 class PackageModel(Package):
     configs: PackageConfigs
     type: Literal["component"] = "component"
-    name : Literal["Thresholding"] = "Thresholding"
+    name : Literal["DemoDualThresholding"] = "DemoDualThresholding"
