@@ -21,7 +21,7 @@ def build_response(context,is_dual_thresholding:bool=False):
         output_image = OutputImage(value=context.first_image)
         sec_output_image = OutputImageSecond(value=context.second_image)
         outputs = DualThresholdingOutputs(
-            outputImage=output_image,
+            firstOutputImage=output_image,
             secondOutputImage=sec_output_image
         )
         response = DualThresholdingResponse(outputs=outputs)
