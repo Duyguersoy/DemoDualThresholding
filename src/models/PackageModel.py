@@ -152,8 +152,6 @@ class ConfigThresholdVal(Config):
             "shortDescription": "Cutoff Point"
         }
 
-
-
 class ConfigTypeAutoThresholding(Config):
     name: Literal["auto thresholding"]="auto thresholding"
     maxVal: ConfigMaxVal
@@ -371,8 +369,8 @@ class ThresholdingExecutor(Config):
 
 
 class DualThresholdingInputs(Inputs):
-    firstInputImage: InputImage
-    secondInputImage: InputImageSecond
+    InputImage: InputImage
+    inputImageSecond: InputImageSecond
 
 
 class DualThresholdingConfigs(Configs):
@@ -380,8 +378,8 @@ class DualThresholdingConfigs(Configs):
 
 
 class DualThresholdingOutputs(Outputs):
-    firstOutputImage: OutputImage
-    secondOutputImage: OutputImageSecond
+    OutputImage: OutputImage
+    outputImageSecond: OutputImageSecond
 
 class DualThresholdingRequest(Request):
     inputs: Optional[DualThresholdingInputs]

@@ -12,13 +12,13 @@ from components.DemoThresholdingg.src.utils.response import build_response
 from components.DemoThresholdingg.src.models.PackageModel import PackageModel
 
 
-class DualThresholding(Executor):
+class DualThresholding(Component):
     def __init__(self,request: PackageModel,bootstrap: Component):
         super().__init__(self,request,bootstrap)
-        self.requeset.model = PackageModel(**(self.request.data()))
+        self.requeset.model = PackageModel(**(self.request.data))
         self.type = self.request.model.get_param("configType") or "GlobalThresholding"
-        self.first_image = self.request.get_param("firstInputImage")
-        self.second_image = self.request.get_param("secondInputImage")
+        self.first_image = self.request.get_param("InputImage")
+        self.second_image = self.request.get_param("inputImageSecond")
         self.load_parameters()
 
     def load_parameters(self):
