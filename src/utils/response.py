@@ -9,9 +9,7 @@ from components.DemoThresholdingg.src.models.PackageModel import (
     ThresholdingOutputs,
     OutputImage,
     OutputImageSecond,
-    
     DualThresholdingResponse,
-    DualThresholdingRequest,
     DualThresholdingExecutor,
     DualThresholdingOutputs,
     OutputImageSecond,
