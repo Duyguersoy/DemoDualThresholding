@@ -16,14 +16,16 @@ from components.DemoThresholdingg.src.models.PackageModel import (
 )
 
 
+
 def build_response(context,is_dual_thresholding:bool=False):
     if is_dual_thresholding:
         output_image = OutputImage(value=context.first_image)
         sec_output_image = OutputImageSecond(value=context.second_image)
         outputs = DualThresholdingOutputs(
-            outputImage=output_image,
-            outputImageSecond=sec_output_image
+        outputImage = output_image,
+        outputImageSecond = sec_output_image
         )
+
         response = DualThresholdingResponse(outputs=outputs)
         selected_executor = DualThresholdingExecutor(value=response)
     
