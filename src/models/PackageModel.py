@@ -336,9 +336,36 @@ class ThresholdingExecutor(Config):
             }
         }
 
+
+
+class DualThresholdingInputs(Inputs):
+    firstInputImage: InputImage
+    secondInputImage: InputImage
+
+
+class DualThresholdingConfigs(Configs):
+    configType: ConfigType
+
+
+class DualThresholdingOutputs(Outputs):
+    firstOutputImage: OutputImage
+    secondOutputImage: OutputImage
+
+class DualThresholdingRequest(Request):
+    inputs: Optional[DualThresholdingInputs]
+    configs: DualThresholdingConfigs
+
+    class Config:
+        json_schema_extra = {
+            "target": "configs"
+        }
+class DualThresholdingResponse(Response):
+    outputs: DualThresholdingOutputs
+
+
 class DualThresholdingExecutor(Config):
     name: Literal["DualThresholdingExecutor"] = "DualThresholdingExecutor"
-    value: Union[ThresholdingRequest, ThresholdingResponse]
+    value: Union[DualThresholdingRequest, DualThresholdingResponse]
     type: Literal["object"] = "object"
     field: Literal["option"] = "option"
 
