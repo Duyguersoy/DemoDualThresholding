@@ -26,7 +26,12 @@ def build_response(context,is_dual_thresholding:bool=False):
         )
         response = DualThresholdingResponse(outputs=outputs)
         selected_executor = DualThresholdingExecutor(value=response)
-        return selected_executor
+    
+        executor = ConfigExecutor(value=selected_executor)
+        packageConfigs = PackageConfigs(executor=executor)
+        package = PackageHelper(packageModel=PackageModel, packageConfigs=packageConfigs)
+        packageModel = package.build_model(context)
+        return packageModel
     
     outputImage = OutputImage(value=context.image)
     Outputs = ThresholdingOutputs(outputImage=outputImage)
