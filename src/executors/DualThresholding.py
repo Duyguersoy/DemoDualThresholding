@@ -17,7 +17,7 @@ class DualThresholding(Component):
         super().__init__(self,request,bootstrap)
         self.requeset.model = PackageModel(**(self.request.data))
         self.type = self.request.model.get_param("configType") or "GlobalThresholding"
-        self.first_image = self.request.get_param("InputImage")
+        self.first_image = self.request.get_param("inputImage")
         self.second_image = self.request.get_param("inputImageSecond")
         self.load_parameters()
 
