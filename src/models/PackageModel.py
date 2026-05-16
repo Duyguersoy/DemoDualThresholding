@@ -323,7 +323,7 @@ class ThresholdingResponse(Response):
 
 
 class ThresholdingExecutor(Config):
-    name: Literal["Thresholding"] = "Thresholding"
+    name: Literal["ThresholdingExecutor"] = "ThresholdingExecutor"
     value: Union[ThresholdingRequest, ThresholdingResponse]
     type: Literal["object"] = "object"
     field: Literal["option"] = "option"
@@ -337,7 +337,7 @@ class ThresholdingExecutor(Config):
         }
 
 class DualThresholdingExecutor(Config):
-    name: Literal["DualThresholding"] = "DualThresholding"
+    name: Literal["DualThresholdingExecutor"] = "DualThresholdingExecutor"
     value: Union[ThresholdingRequest, ThresholdingResponse]
     type: Literal["executor"] = "object"
     field: Literal["option"] = "option"
