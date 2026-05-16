@@ -346,7 +346,7 @@ class DualThresholdingExecutor(Config):
         title = "Dual Thresholding"
         json_schema_extra = {
             "target": {
-                "value": 1
+                "value": 0
             }
         }
 
