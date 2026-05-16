@@ -95,7 +95,7 @@ class ConfigOffSet(Config):
 
     class Config:
         title = "Offset"
-        schema_extra = {
+        json_schema_extra = {
             "shortDescription": "Sensitivity Constant"
         }
 
@@ -121,7 +121,7 @@ class ConfigSubBlock(Config):
 
     class Config:
         title = "SubBlock Size"
-        schema_extra = {
+        json_schema_extra = {
             "shortDescription": "Neighborhood Area Size"
         }
 
@@ -135,7 +135,7 @@ class ConfigMaxVal(Config):
 
     class Config:
         title = "Max Value"
-        schema_extra = {
+        json_schema_extra = {
             "shortDescription": "Active Pixel Color"
         }
 
@@ -149,7 +149,7 @@ class ConfigThresholdVal(Config):
 
     class Config:
         title = "Threshold Value"
-        schema_extra = {
+        json_schema_extra = {
             "shortDescription": "Cutoff Point"
         }
 
@@ -259,7 +259,7 @@ class ConfigLocalType(Config):
 
     class Config:
         title = "Type"
-        schema_extra = {
+        json_schema_extra = {
             "shortDescription": "Adaptive Algorithm"
         }
 
@@ -279,7 +279,7 @@ class ConfigGlobalType(Config):
 
     class Config:
         title = "Type"
-        schema_extra = {
+        json_schema_extra = {
             "shortDescription": "Separation Logic"
         }
 
@@ -314,7 +314,7 @@ class ConfigType(Config):
 
     class Config:
         title = "Method"
-        schema_extra = {
+        json_schema_extra = {
             "shortDescription": "Segmentation Strategy"
         }
 
@@ -346,7 +346,7 @@ class ThresholdingRequest(Request):
     configs: ThresholdingConfigs
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "target": "configs"
         }
 
@@ -356,7 +356,7 @@ class DualThresholdingRequest(Request):
     configs: ThresholdingConfigs
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "target": "configs"
         }
 
@@ -377,7 +377,7 @@ class ThresholdingExecutor(Config):
 
     class Config:
         title = "Thresholding Executor"
-        schema_extra = {
+        json_schema_extra = {
             "target": {
                 "value": 0
             }
@@ -392,7 +392,7 @@ class DualThresholdingExecutor(Config):
 
     class Config:
         title = "Dual Thresholding Executor"
-        schema_extra = {
+        json_schema_extra = {
             "target": {
                 "value": 0
             }
