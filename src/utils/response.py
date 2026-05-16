@@ -1,9 +1,33 @@
 
 from sdks.novavision.src.helper.package import PackageHelper
-from components.Thresholding.src.models.PackageModel import PackageModel, PackageConfigs, ConfigExecutor, ThresholdingExecutor, ThresholdingResponse, ThresholdingOutputs, OutputImage
+from components.DemoThresholdingg.src.models.PackageModel import (
+    PackageModel,
+    PackageConfigs,
+    ConfigExecutor,
+    ThresholdingExecutor,
+    ThresholdingResponse,
+    ThresholdingOutputs,
+    OutputImage,
+    DualThresholdingResponse,
+    DualThresholdingRequest,
+    DualThresholdingExecutor,
+    DualThresholdingOutputs,
+    OutputImageSecond,
+)
 
 
-def build_response(context):
+def build_response(context,is_dual_thresholding:bool=False):
+    if is_dual_thresholding:
+        output_image = OutputImage(value=context.first_image)
+        sec_output_image = OutputImageSecond(value=context.second_image)
+        outputs = DualThresholdingOutputs(
+            outputImage=output_image,
+            secondOutputImage=sec_output_image
+        )
+        response = DualThresholdingResponse(outputs=outputs)
+        selected_executor = DualThresholdingExecutor(value=response)
+        return selected_executor
+    
     outputImage = OutputImage(value=context.image)
     Outputs = ThresholdingOutputs(outputImage=outputImage)
     normalizationResponse = ThresholdingResponse(outputs=Outputs)
