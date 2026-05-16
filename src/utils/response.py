@@ -8,6 +8,8 @@ from components.DemoThresholdingg.src.models.PackageModel import (
     ThresholdingResponse,
     ThresholdingOutputs,
     OutputImage,
+    OutputImageSecond,
+    
     DualThresholdingResponse,
     DualThresholdingRequest,
     DualThresholdingExecutor,

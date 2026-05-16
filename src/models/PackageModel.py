@@ -388,7 +388,7 @@ class ThresholdingExecutor(Config):
 
 class DualThresholdingInputs(Inputs):
     firstInputImage: InputImage
-    secondInputImage: InputImage
+    secondInputImage: InputImageSecond
 
 
 class DualThresholdingConfigs(Configs):
@@ -397,7 +397,7 @@ class DualThresholdingConfigs(Configs):
 
 class DualThresholdingOutputs(Outputs):
     firstOutputImage: OutputImage
-    secondOutputImage: OutputImage
+    secondOutputImage: OutputImageSecond
 
 class DualThresholdingRequest(Request):
     inputs: Optional[DualThresholdingInputs]
